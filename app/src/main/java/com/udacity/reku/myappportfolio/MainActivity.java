@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    Toast toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+        toast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
     }
 
     @Override
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showToast(String msg){
-        Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT);
+        toast.setText(msg);
         toast.show();
     }
 }
